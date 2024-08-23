@@ -18,4 +18,19 @@ namespace soaptest.Services
             return "Error";
         }
     }
+
+    [ServiceContract]
+    public interface INeedAService
+    {
+        [OperationContract]
+        public string Execute();
+    }
+
+    public class NeedAService : INeedAService
+    {
+        public string Execute()
+        {
+            return "Executed";
+        }
+    }
 }
